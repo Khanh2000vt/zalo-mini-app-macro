@@ -1,0 +1,18 @@
+{
+  "cwd": "D:\\Working\\Adamo\\Intern\\coffee-macro",
+  "name": "Coffee Macro",
+  "framework": "react-typescript",
+  "cssPreProcessor": "scss",
+  "includeTailwind": true,
+  "stateManagement": "recoil",
+  "newProject": true,
+  "template": "blank",
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false,
+    "useUiKits": true
+  }
+}

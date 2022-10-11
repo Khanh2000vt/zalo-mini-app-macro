@@ -1,0 +1,14 @@
+{
+  "app": {
+    "title": "Coffee Macro",
+    "headerColor": "#1843EF",
+    "textColor": "white",
+    "statusBarColor": "#1843EF",
+    "leftButton": "both"
+  },
+  "debug": false,
+  "listCSS": [],
+  "listSyncJS": [],
+  "listAsyncJS": [],
+  "pages": ["/discount", "/history"]
+}
