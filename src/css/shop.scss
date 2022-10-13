@@ -1,0 +1,26 @@
+.shop-heading {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: #fff;
+  align-items: center;
+}
+.shop-heading-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+}
+.shop-heading-information {
+  margin: 0 10px;
+  flex: 1;
+}
+.ellipsis {
+  //   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.shop-heading-button {
+  padding: 0 10px;
+}

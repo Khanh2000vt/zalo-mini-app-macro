@@ -10,5 +10,5 @@
   "listCSS": [],
   "listSyncJS": [],
   "listAsyncJS": [],
-  "pages": ["/discount", "/history"]
+  "pages": ["/discount", "/history", "/shop"]
 }
