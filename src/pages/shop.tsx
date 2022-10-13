@@ -1,14 +1,20 @@
 import React from "react";
-import { Page } from "zmp-framework/react";
-import { ShopBanner, ShopHeading } from "../components";
+import { Page, Sheet } from "zmp-framework/react";
+import {
+  ShopBanner,
+  ShopHeading,
+  ShopInquiry,
+  ShopListProduct,
+} from "../components";
 
 function ShopDetail(props) {
   const { shop } = props;
-  console.log("shop: ", shop);
   return (
     <Page>
       <ShopHeading shop={shop} />
       <ShopBanner shop={shop} />
+      <ShopInquiry shop={shop} />
+      <ShopListProduct />
     </Page>
   );
 }

@@ -23,7 +23,7 @@ interface IProducts {
 }
 
 interface ITime {
-  house: number;
+  hour: number;
   minute: number;
 }
 
@@ -35,5 +35,9 @@ interface IShop {
   open: ITime;
   close: ITime;
 }
+interface ICart {
+  product: IProduct;
+  quantity: number;
+}
 
-export type { IDiscount, IProducts, IProduct, IShop };
+export type { IDiscount, IProducts, IProduct, IShop, ITime, ICart };

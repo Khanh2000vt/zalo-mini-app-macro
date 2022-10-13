@@ -1,16 +1,21 @@
 import { createStore } from "zmp-framework/core";
 import { discount, products, shops } from "./api";
-import { IDiscount, IProduct, IProducts, IShop } from "./service";
+import { ICart, IDiscount, IProduct, IProducts, IShop } from "./service";
 interface IState {
   user: any;
   categories: string[];
   selectedAddress: string | null;
   shops: IShop[];
   products: IProducts[];
-  cart: IProduct[];
+  cart: ICart[];
   shipping: IProduct[];
   discounts: IDiscount[];
   note: string;
+  listProduct: IProduct[];
+}
+interface IParamShop {
+  shop: IShop;
+  index: number;
 }
 
 const initState: IState = {
@@ -23,21 +28,26 @@ const initState: IState = {
   shipping: [],
   discounts: discount,
   note: "",
+  listProduct: [],
 };
 
 const store = createStore({
   state: initState,
   actions: {
-    getUsers({ state }) {
-      //   // gọi api
-      //   fetch('some-url')
-      //     .then((res) => res.jsstate
-      //     .then((users) => {
-      //       // gán users trả về cho state
-      //       state.users = users;
-      //     });
-    },
+    getUsers({ state }) {},
     // ...
+    getProductFilter({ state }, { shop, index }) {
+      const productShop = state.products.find(
+        (product) => product.shopID === shop.id
+      );
+      if (index === -1) {
+        state.listProduct = productShop.data;
+      } else {
+        state.listProduct = productShop.data.filter(
+          (product) => product.type === index
+        );
+      }
+    },
   },
 
   getters: {
@@ -72,7 +82,13 @@ const store = createStore({
       return state.cart.reduce((total, item) => total + item.quantity, 0);
     },
     totalAmount({ state }) {
-      return state.cart.reduce((total, item) => total + item.subtotal, 0);
+      return state.cart.reduce(
+        (total, item) => total + item.product.subtotal,
+        0
+      );
+    },
+    listProduct({ state }) {
+      return state.listProduct;
     },
   },
 });

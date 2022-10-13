@@ -1,14 +1,19 @@
 import React from "react";
-import { Button, Text } from "zmp-framework/react";
-import { IShop } from "../../service";
+import { Button, Link, Text } from "zmp-framework/react";
 import "../../css/shop.scss";
+import { IShop } from "../../service";
 interface IState {
   shop: IShop;
 }
 function ShopHeading({ shop }: IState) {
   return (
     <div className="shop-heading">
-      <img src={shop.avatar} className="shop-heading-avatar" />
+      {/* <img src={shop.avatar} className="shop-heading-avatar" /> */}
+      <Link
+        back
+        iconZMP="zi-chevron-left-header"
+        className="shop-heading-chevron"
+      ></Link>
       <div className="shop-heading-information">
         <Text bold className="mb-0">
           Coffee Shop

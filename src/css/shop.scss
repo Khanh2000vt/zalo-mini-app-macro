@@ -1,3 +1,4 @@
+@use "sass:math";
 .shop-heading {
   display: flex;
   flex-direction: row;
@@ -5,22 +6,101 @@
   justify-content: space-between;
   background-color: #fff;
   align-items: center;
+  .shop-heading-chevron {
+    i {
+      opacity: 1;
+      top: 0;
+      left: 0;
+    }
+  }
+  .shop-heading-information {
+    margin: 0 10px;
+    flex: 1;
+  }
+  .ellipsis {
+    //   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .shop-heading-button {
+    padding: 0 10px;
+  }
 }
-.shop-heading-avatar {
-  height: 40px;
-  width: 40px;
-  border-radius: 100px;
+.shop-banner {
+  position: relative;
+  .shop-banner-img {
+    height: 220px;
+    width: 100%;
+  }
+  .shop-banner-time {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 20px;
+    display: flex;
+    width: fit-content;
+    border-radius: 8px;
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+  }
+  .shop-banner-time-text {
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    flex: 1;
+    margin: 0;
+  }
 }
-.shop-heading-information {
-  margin: 0 10px;
-  flex: 1;
+
+.shop-inquiry {
+  display: flex;
+  select,
+  .button {
+    background-color: white;
+    border: none;
+  }
+  #shop-category {
+    margin: 0;
+  }
+  .button {
+    width: 48px;
+    height: 48px;
+    .icon {
+      opacity: 1;
+      top: 0;
+      left: 0;
+      margin: 0;
+    }
+  }
 }
-.ellipsis {
-  //   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
+.shop-list-product {
+  $padding: 14px;
+  padding: 0 $padding;
+  .list-product {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .product-item {
+    width: calc(50% - 24px);
+    height: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .product-img {
+      border-radius: 8px;
+    }
+    .product-text {
+      text-align: center;
+    }
+  }
 }
-.shop-heading-button {
-  padding: 0 10px;
+
+#id-sheet-product {
+  height: 90%;
 }
